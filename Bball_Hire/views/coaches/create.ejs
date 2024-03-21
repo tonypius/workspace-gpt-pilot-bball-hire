@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Create Coach Profile</h2>
+    <form action="/coaches/create" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="coachingExperience" class="form-label">Coaching Experience</label>
+            <input type="text" id="coachingExperience" name="coachingExperience" placeholder="Coaching Experience" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="teamInformation" class="form-label">Team Information</label>
+            <input type="text" id="teamInformation" name="teamInformation" placeholder="Team Information" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="contactDetails" class="form-label">Contact Details</label>
+            <input type="text" id="contactDetails" name="contactDetails" placeholder="Contact Details" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Create Profile</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/_footer.ejs') %>
+</body>
+</html>

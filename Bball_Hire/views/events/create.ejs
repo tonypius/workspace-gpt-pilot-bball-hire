@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Create New Event</h2>
+    <form action="/events/create" method="POST">
+        <div class="mb-3">
+            <input type="text" name="title" placeholder="Title" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <textarea name="description" placeholder="Description" required class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="location" placeholder="Location" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="date" name="date" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Create Event</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/_footer.ejs') %>
+</body>
+</html>

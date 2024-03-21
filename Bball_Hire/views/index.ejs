@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+  <body>
+<%- include('partials/_header.ejs') %>
+    <main role="main" class="container mt-4">
+      <div class="text-center">
+        <h1>Bball_Hire</h1>
+        <% if (userRole) { %>
+          <div>
+            <% if (profiles && profiles.length > 0) { %>
+              <% if (userRole === 'player') { %>
+                <h2>Recommended Coaches</h2>
+                <% profiles.forEach(function(profile) { %>
+                  <div>
+                    <h3><%- profile.name %></h3>
+                    <p>Coaching Experience: <%- profile.coachingExperience %></p>
+                    <p>Team Information: <%- profile.teamInformation %></p>
+                    <p>Contact Details: <%- profile.contactDetails %></p>
+                    <!-- More coach profile details here -->
+                  </div>
+                <% }) %>
+              <% } else if (userRole === 'coach') { %>
+                <h2>Available Players</h2>
+                <% profiles.forEach(function(profile) { %>
+                  <div>
+                    <h3><%- profile.name %></h3>
+                    <p>Position: <%- profile.position %></p>
+                    <p>City: <%- profile.city %></p>
+                    <p>Contact Information: <%- profile.contactInformation %></p>
+                    <!-- More player profile details here -->
+                  </div>
+                <% }) %>
+              <% } else if (userRole === 'transferPlayer') { %>
+                <h2>Interested Coaches</h2>
+                <% profiles.forEach(function(profile) { %>
+                  <div>
+                    <h3><%- profile.name %></h3>
+                    <p>Coaching Experience: <%- profile.coachingExperience %></p>
+                    <p>Team Information: <%- profile.teamInformation %></p>
+                    <p>Contact Details: <%- profile.contactDetails %></p>
+                    <!-- More coach profile details here -->
+                  </div>
+                <% }) %>
+              <% } %>
+            <% } else { %>
+              <p>No profiles found.</p>
+            <% } %>
+          </div>
+        <% } else { %>
+          <p>Please log in to view profiles relevant to you.</p>
+        <% } %>
+      </div>
+    </main>
+  </body>
+<%- include('partials/_footer.ejs') %>
+  <script src="/js/main.js"></script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Events</h2>
+    <div>
+        <% if(events.length > 0) { %>
+            <% events.forEach(function(event) { %>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Title: <%- event.title %></h5>
+                        <p class="card-text">Location: <%- event.location %></p>
+                        <p class="card-text">Date: <%- event.date.toISOString().split('T')[0] %></p>
+                        <button onclick="joinEvent('<%- event._id %>')" class="btn btn-primary">Join</button>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No events found.</p>
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/_footer.ejs') %>
+<script src="/js/main.js"></script>
+</body>
+</html>

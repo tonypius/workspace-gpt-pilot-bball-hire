@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Search Results</h2>
+    <div>
+        <% if(transferPlayers.length > 0) { %>
+            <% transferPlayers.forEach(function(transferPlayer) { %>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: <%- transferPlayer.name %></h5>
+                        <p class="card-text">Position: <%- transferPlayer.position %></p>
+                        <p class="card-text">City: <%- transferPlayer.city %></p>
+                        <p class="card-text">State: <%- transferPlayer.state %></p>
+                        <p class="card-text">Country: <%- transferPlayer.country %></p>
+                        <p class="card-text">Height: <%- transferPlayer.height %> cm</p>
+                        <p class="card-text">GPA: <%- transferPlayer.GPA %></p>
+                        <p class="card-text">Age: <%- transferPlayer.age %></p>
+                        <% if(transferPlayer.highlightVideoLink) { %>
+                            <p class="card-text"><a href="<%- transferPlayer.highlightVideoLink %>" target="_blank">Highlight Video</a></p>
+                        <% } %>
+                        <p class="card-text">Previous College Experience: <%- transferPlayer.previousCollegeExperience %></p>
+                        <p class="card-text">Reasons for Transfer: <%- transferPlayer.reasonsForTransfer %></p>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No results found.</p>
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/_footer.ejs') %>
+</body>
+</html>

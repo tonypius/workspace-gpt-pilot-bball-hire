@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Search Transfer Player Profiles</h2>
+    <form action="/transferPlayers/search/results" method="GET">
+        <div class="mb-3">
+            <input type="text" name="name" placeholder="Name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="position" placeholder="Position" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="city" placeholder="City" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="state" placeholder="State" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="country" placeholder="Country" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="height" placeholder="Height" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" step="0.01" name="GPA" placeholder="GPA" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="age" placeholder="Age" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="previousCollegeExperience" placeholder="Previous College Experience" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="reasonsForTransfer" placeholder="Reasons For Transfer" class="form-control">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/_footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Search Player Profiles</h2>
+    <form action="/players/search/results" method="GET">
+        <div class="mb-3">
+            <input type="text" name="position" placeholder="Position" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="city" placeholder="City" class="form-control">
+        </div>
+        <!-- Add more fields as necessary for filtering -->
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/_footer.ejs') %>
+</body>
+</html>

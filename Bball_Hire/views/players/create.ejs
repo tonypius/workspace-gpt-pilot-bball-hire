@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/_head.ejs') %>
+<body>
+<%- include('../partials/_header.ejs') %>
+<main role="main" class="container mt-5">
+    <h2>Create Player Profile</h2>
+    <form action="/players/create" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="text" name="name" placeholder="Name" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="position" placeholder="Position" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="city" placeholder="City" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="state" placeholder="State" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="country" placeholder="Country" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="height" placeholder="Height (in cm)" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" step="0.01" name="GPA" placeholder="GPA" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="age" placeholder="Age" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="url" name="highlightVideoLink" placeholder="Highlight Video Link" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="academicTranscripts">Academic Transcripts</label>
+            <input type="file" name="academicTranscripts" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="contactInformation" placeholder="Contact Information" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Create Profile</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/_footer.ejs') %>
+</body>
+</html>
